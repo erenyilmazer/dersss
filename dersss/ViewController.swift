@@ -10,16 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var textfileld: UITextField!
+    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var text: UITextView!
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        label.text = "fenerbahçe"
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func butonabas(_ sender: Any) {
+        label.text = textfileld.text
+        text.text = textfileld.text
+        
+        switch segment.selectedSegmentIndex {
+        case 0:
+            label.text = "1.seçildi"
+        case 1:
+            label.text = "2.seçildi"
+        case 2:
+            label.text = "3.seçildi"
+        case 3:
+            label.text = "4.seçildi"
+        default:
+            label.text = "hata"
+        }
     }
-
 
 }
 
